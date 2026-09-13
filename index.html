@@ -277,7 +277,7 @@
     </div>
   </section>
 
-  <div class="wrap" id="contact">
+  <section class="wrap" id="contact" style="border-top:0">
     <div class="contact">
       <div>
         <p class="eyebrow" style="color:var(--hazard)">Talk to Zach</p>
@@ -291,7 +291,7 @@
         <small>Demo line: <a href="tel:+13126246997" style="color:inherit">(312) 624‑6997</a></small>
       </div>
     </div>
-  </div>
+  </section>
 </main>
 
 <div class="wrap">
@@ -301,5 +301,14 @@
   </footer>
 </div>
 <a class="callbar" href="tel:+13126246997"><span>Hear the demo</span><b>(312) 624‑6997</b></a>
+<script>
+  // Re-anchor after web fonts load: the display font is much narrower than its fallback, so the page
+  // reflows shorter after the initial #hash jump and the target ends up off-screen (cold cache, phones).
+  (function () {
+    function go() { var el = location.hash && document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); }
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { requestAnimationFrame(go); });
+    window.addEventListener('pageshow', function (e) { if (e.persisted) go(); });
+  })();
+</script>
 </body>
 </html>
