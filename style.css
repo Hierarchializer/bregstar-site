@@ -486,3 +486,44 @@
   .legal dl { margin: 12px 0 0; }
   .legal dt { font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-top: 14px; }
   .legal dd { margin: 4px 0 0; color: var(--ink-2); }
+
+  /* ---------- site nav ---------- */
+  .top-nav { display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--mono); font-size: .78rem; }
+  .top-nav a { text-decoration: none; color: var(--ink-2); padding-bottom: 2px; border-bottom: 2px solid transparent; }
+  .top-nav a:hover { color: var(--ink); }
+  .top-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--hazard); }
+  .mark { text-decoration: none; }
+
+  /* ---------- demo business ---------- */
+  .banner {
+    background: var(--hazard); color: var(--hazard-ink);
+    font-family: var(--mono); font-size: .78rem; letter-spacing: .04em;
+    padding: 9px 0; text-align: center;
+  }
+  .banner a { color: inherit; }
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 52px; }
+  .facts div { background: var(--panel); padding: 22px; }
+  .facts .k { font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); display: block; margin-bottom: 8px; }
+  .facts p { color: var(--ink-2); font-size: .95rem; }
+  .prices { width: 100%; border-collapse: collapse; font-size: .95rem; margin-bottom: 52px; }
+  .prices td { padding: 12px 0; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+  .prices td:last-child { text-align: right; font-family: var(--mono); font-size: .85rem; white-space: nowrap; }
+  .prices td:first-child { color: var(--ink-2); padding-right: 20px; }
+
+  /* ---------- contact ---------- */
+  .contact { background: var(--ink); color: var(--paper); padding: 40px 34px; margin-bottom: 56px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .contact { background: var(--panel-2); color: var(--ink); } }
+  :root[data-theme="dark"] .contact { background: var(--panel-2); color: var(--ink); }
+  .contact h2 { margin-bottom: 12px; }
+  .contact p { opacity: .85; max-width: 46ch; }
+  .contact .email { font-family: var(--display); font-size: clamp(1.6rem, 4vw, 2.4rem); text-decoration: none; display: block; word-break: break-all; }
+  .contact .email b { border-bottom: 3px solid var(--hazard); font-weight: 700; }
+  .contact small { font-family: var(--mono); font-size: .75rem; opacity: .7; display: block; margin-top: 10px; }
+  .not-for { border-left: 3px solid var(--hazard); padding-left: 18px; margin-top: 24px; }
+  .not-for p { color: var(--ink-2); font-size: .95rem; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; padding-bottom: 52px; }
+  .two h3 { margin-bottom: 10px; }
+  .two p { color: var(--ink-2); font-size: .97rem; }
+  @media (max-width: 860px) {
+    .facts, .contact, .two { grid-template-columns: 1fr; }
+  }
