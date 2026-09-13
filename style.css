@@ -527,3 +527,84 @@
   @media (max-width: 860px) {
     .facts, .contact, .two { grid-template-columns: 1fr; }
   }
+
+  /* ---------- mobile (phones) ---------- */
+  .callbar { display: none; }
+  [id] { scroll-margin-top: 96px; }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .wrap { padding-inline: 18px; }
+
+    /* compact sticky header: logo row + one swipeable nav row */
+    header.top { position: sticky; top: 0; z-index: 20; }
+    .top-inner { display: grid; grid-template-columns: 1fr; gap: 0; padding-block: 12px 0; }
+    .top-cta { display: none; }
+    .top-nav {
+      flex-wrap: nowrap; overflow-x: auto; gap: 2px;
+      margin-inline: -18px; padding-inline: 10px;
+      scrollbar-width: none; -webkit-overflow-scrolling: touch;
+    }
+    .top-nav::-webkit-scrollbar { display: none; }
+    .top-nav a { white-space: nowrap; padding: 13px 6px 11px; font-size: .76rem; }
+
+    /* hero */
+    .hero { padding-block: 26px 30px; gap: 24px; }
+    .lede { font-size: 1.05rem; margin-top: 16px; }
+    .hero-meta { flex-direction: column; gap: 6px; margin-top: 18px; }
+    .call-card { margin-inline: -18px; padding: 24px 18px 20px; }
+    .call-card p { max-width: none; }
+
+    /* sections */
+    .sec-head { padding-block: 34px 16px; gap: 12px; }
+    .math { margin-bottom: 36px; }
+    .math div, .facts div { padding: 18px; }
+    .math .n { font-size: 2.15rem; }
+    .does { padding-bottom: 36px; }
+    .trial { margin-bottom: 40px; }
+    .trial > div { padding: 24px 18px; }
+    .plan { padding: 22px 18px; }
+    .plan-note { padding-bottom: 36px; }
+    .faq { padding-bottom: 40px; }
+    .faq summary { font-size: 1.15rem; padding-block: 4px; }
+    .two { gap: 28px; padding-bottom: 36px; }
+    .prices { margin-bottom: 36px; font-size: .92rem; }
+    .facts { margin-bottom: 36px; }
+    .closer { padding-block: 34px; }
+    .closer .btn { width: 100%; justify-content: center; }
+    .contact { margin-inline: -18px; padding: 30px 18px; margin-bottom: 40px; gap: 22px; }
+    .contact .email { font-size: 1.65rem; }
+    footer { flex-direction: column; gap: 10px; padding-block: 22px 26px; }
+    .legal { padding-block: 32px 44px; }
+    .legal .box { padding: 16px; }
+
+    /* demo banner */
+    .banner { font-size: .72rem; padding: 8px 14px; }
+    .hide-sm { display: none; }
+
+    /* call log table -> stacked cards */
+    .log-scroll { overflow: visible; }
+    .log thead { display: none; }
+    .log, .log tbody, .log tr, .log td { display: block; width: 100%; }
+    .log tr { background: var(--panel); border: 1px solid var(--rule); padding: 12px 14px 14px; margin-bottom: 10px; }
+    .log tr.miss { border-left: 3px solid var(--miss); }
+    .log td { border: 0; padding: 2px 0; text-align: left !important; }
+    .log td[data-label="Time"] { color: var(--ink-3); font-size: .74rem; }
+    .log td[data-label="Time"]::after { content: " · " attr(data-caller); }
+    .log td[data-label="Caller"] { display: none; }
+    .log td[data-label="What happened"] { margin: 4px 0 10px; }
+    .log td[data-label="Outcome"], .log td[data-label="Job value"] { display: inline-block; width: auto; margin-right: 12px; }
+    .log-foot { flex-direction: column; gap: 8px; padding-bottom: 36px; }
+
+    /* tap-to-call bar pinned to the bottom */
+    .callbar {
+      display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+      align-items: center; justify-content: space-between; gap: 12px;
+      padding: 11px 18px calc(11px + env(safe-area-inset-bottom));
+      background: var(--hazard); color: var(--hazard-ink); text-decoration: none;
+      font-family: var(--mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase;
+      box-shadow: 0 -10px 24px -14px rgba(0, 0, 0, .45);
+    }
+    .callbar b { font-family: var(--display); font-weight: 700; font-size: 1.4rem; letter-spacing: .01em; text-transform: none; white-space: nowrap; }
+    body:has(.callbar) { padding-bottom: calc(62px + env(safe-area-inset-bottom)); }
+  }
