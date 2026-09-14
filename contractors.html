@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="/style.css?v=eec450c">
+<link rel="stylesheet" href="/style.css?v=372834c">
 </head>
 <body>
 
@@ -68,12 +68,17 @@
           happens today. The rest is what happens when the line is answered.</p>
       </div>
 
-      <div class="log-scroll">
-        <table class="log">
+      <div class="compare">
+        <div class="panel without">
+          <div class="panel-head">
+            <p class="eyebrow">Without Bregstar</p>
+            <h3>Voicemail picks up</h3>
+            <p class="sum"><b>4 calls</b> · 0 booked · <b class="neg">~$3,960</b> went to whoever answered second</p>
+          </div>
+          <table class="log">
           <thead>
             <tr>
               <th scope="col">Time</th>
-              <th scope="col">Caller</th>
               <th scope="col">What happened</th>
               <th scope="col">Outcome</th>
               <th scope="col">Job value</th>
@@ -82,74 +87,84 @@
           <tbody>
             <tr class="miss">
               <td data-label="Time" data-caller="(773) 555‑0148">18:12</td>
-              <td data-label="Caller" class="who">(773) 555‑0148</td>
               <td data-label="What happened" class="what">Rang 5×, voicemail. No message left.</td>
               <td data-label="Outcome"><span class="tag lost">Lost</span></td>
               <td data-label="Job value" class="val">—</td>
             </tr>
             <tr class="miss">
               <td data-label="Time" data-caller="(312) 555‑0199">19:40</td>
-              <td data-label="Caller" class="who">(312) 555‑0199</td>
               <td data-label="What happened" class="what">Voicemail. Called two other shops at 19:41 and 19:43.</td>
               <td data-label="Outcome"><span class="tag lost">Lost</span></td>
               <td data-label="Job value" class="val">~$1,250</td>
             </tr>
             <tr class="miss">
               <td data-label="Time" data-caller="(872) 555‑0111">21:06</td>
-              <td data-label="Caller" class="who">(872) 555‑0111</td>
               <td data-label="What happened" class="what">Water heater flooding a basement. Voicemail.</td>
               <td data-label="Outcome"><span class="tag lost">Lost</span></td>
               <td data-label="Job value" class="val">~$2,400</td>
             </tr>
             <tr class="miss">
               <td data-label="Time" data-caller="(773) 555‑0173">07:02</td>
-              <td data-label="Caller" class="who">(773) 555‑0173</td>
               <td data-label="What happened" class="what">Called before the office opened. Hung up at ring 4.</td>
               <td data-label="Outcome"><span class="tag lost">Lost</span></td>
               <td data-label="Job value" class="val">~$310</td>
             </tr>
+          </tbody>
+          </table>
+        </div>
+        <div class="panel with">
+          <div class="panel-head">
+            <p class="eyebrow">With Bregstar</p>
+            <h3>The same night, answered</h3>
+            <p class="sum"><b>5 calls</b> · 3 booked, 1 dispatched, 1 screened · <b class="pos">$4,270</b> on the calendar</p>
+          </div>
+          <table class="log">
+          <thead>
+            <tr>
+              <th scope="col">Time</th>
+              <th scope="col">What happened</th>
+              <th scope="col">Outcome</th>
+              <th scope="col">Job value</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td data-label="Time" data-caller="(773) 555‑0148">18:12</td>
-              <td data-label="Caller" class="who">(773) 555‑0148</td>
               <td data-label="What happened" class="what">Slow kitchen drain. Booked Thu 2:00pm, 90 min. Confirmation texted.</td>
               <td data-label="Outcome"><span class="tag booked">Booked</span></td>
               <td data-label="Job value" class="val">$310</td>
             </tr>
             <tr>
               <td data-label="Time" data-caller="(312) 555‑0199">19:40</td>
-              <td data-label="Caller" class="who">(312) 555‑0199</td>
               <td data-label="What happened" class="what">Water heater, no hot water. Booked Wed 8:00am. Address and photos on file.</td>
               <td data-label="Outcome"><span class="tag booked">Booked</span></td>
               <td data-label="Job value" class="val">$1,250</td>
             </tr>
             <tr>
               <td data-label="Time" data-caller="(872) 555‑0111">21:06</td>
-              <td data-label="Caller" class="who">(872) 555‑0111</td>
-              <td data-label="What happened" class="what">Flooding. Talked them through the shutoff valve, then rang your cell.
-                You answered in 14 seconds.</td>
+              <td data-label="What happened" class="what">Flooding. Talked them through the shutoff valve, then rang your cell. You answered in 14 seconds.</td>
               <td data-label="Outcome"><span class="tag booked">Dispatched</span></td>
               <td data-label="Job value" class="val">$2,400</td>
             </tr>
             <tr>
               <td data-label="Time" data-caller="(312) 555‑0164">21:22</td>
-              <td data-label="Caller" class="who">(312) 555‑0164</td>
               <td data-label="What happened" class="what">Robodialer pitching Google rankings. Screened, 9 seconds.</td>
               <td data-label="Outcome"><span class="tag sent">Screened</span></td>
               <td data-label="Job value" class="val">—</td>
             </tr>
             <tr>
               <td data-label="Time" data-caller="(773) 555‑0173">07:02</td>
-              <td data-label="Caller" class="who">(773) 555‑0173</td>
               <td data-label="What happened" class="what">Asked what the diagnostic costs. Answered from your price list, then booked Fri 11:00am.</td>
               <td data-label="Outcome"><span class="tag booked">Booked</span></td>
               <td data-label="Job value" class="val">$310</td>
             </tr>
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
       <div class="log-foot">
         <span>Every call transcribed and summarised in your call log, with what it did and why.</span>
-        <span><b>$4,270</b> booked overnight in this example · <b>0</b> calls to return in the morning</span>
+        <span><b>0</b> calls to return in the morning</span>
       </div>
     </div>
   </section>

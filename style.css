@@ -252,6 +252,8 @@
     vertical-align: top;
   }
   .log td:last-child, .log th:last-child { padding-right: 0; text-align: right; }
+  .log td[data-label="Time"] { white-space: nowrap; }
+  .log td[data-label="Time"]::after { content: attr(data-caller); display: block; color: var(--ink-3); font-size: .72rem; margin-top: 2px; }
   .log .who { font-family: var(--body); font-size: .9rem; color: var(--ink); }
   .log .what { font-family: var(--body); font-size: .9rem; color: var(--ink-2); }
   .log tr.miss .what { color: var(--miss); }
@@ -606,4 +608,33 @@
     }
     .callbar b { font-family: var(--display); font-weight: 700; font-size: 1.4rem; letter-spacing: .01em; text-transform: none; white-space: nowrap; }
     body:has(.callbar) { padding-bottom: calc(62px + env(safe-area-inset-bottom)); }
+  }
+
+  /* ---------- without / with comparison ---------- */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+  .panel { background: var(--panel); border: 1px solid var(--rule); border-top: 4px solid var(--rule); padding: 0 20px 6px; }
+  .panel.without { border-top-color: var(--miss); }
+  .panel.with { border-top-color: var(--live); }
+  .panel-head { padding: 18px 0 14px; border-bottom: 1px solid var(--rule); margin-bottom: 4px; }
+  .panel-head .eyebrow { margin-bottom: 6px; }
+  .panel.without .eyebrow { color: var(--miss); }
+  .panel.with .eyebrow { color: var(--live); }
+  .panel-head h3 { font-size: 1.5rem; }
+  .panel-head .sum { margin-top: 8px; font-size: .9rem; color: var(--ink-2); }
+  .panel-head .sum b { color: var(--ink); font-weight: 600; }
+  .panel-head .sum b.neg { color: var(--miss); }
+  .panel-head .sum b.pos { color: var(--live); }
+  .panel .log { font-size: .78rem; }
+  .panel .log th { padding-top: 10px; }
+  .panel .log td { padding: 10px 12px 10px 0; }
+  .panel .log tr:last-child td { border-bottom: 0; }
+  @media (max-width: 860px) {
+    .compare { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .compare { gap: 14px; }
+    .panel { padding: 0 14px 4px; }
+    .panel-head h3 { font-size: 1.3rem; }
+    .log td[data-label="Time"]::after { display: inline; margin-left: 6px; }
+    .panel .log tr { margin: 10px 0; }
   }
